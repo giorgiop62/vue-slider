@@ -26,7 +26,22 @@ createApp({
       }else if(this.activeImage < 0){
         this.activeImage = this.images.length -1;
       }
-      }
+      },
+      cambiaImg(index){
+        this.activeImage = index;
+
+      },
+      
+      //loop di foto automatico
+      autoscroll(){
+        setInterval(()=>{
+          this.nextPrev();
+        },3000)
+        }
+
+
+
+
     }
  
   

@@ -20,7 +20,9 @@
         <img 
           v-for="(img, indice) in images"
           :src="img" class="thumbs"
-          :class="{'active' : indice == activeImage}">
+          :class="{'active' : indice == activeImage}"
+          @click="cambiaImg(indice)">
+          
         
       </div>
 
