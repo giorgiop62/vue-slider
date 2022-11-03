@@ -18,16 +18,17 @@
       </div>
       <div class="thumbs">
         <img 
-          v-for="img in images"
-          :src="img" class="thumbs">
+          v-for="(img, indice) in images"
+          :src="img" class="thumbs"
+          :class="{'active' : indice == activeImage}">
         
       </div>
 
     </div>
 
     <div class="button">
-      <div class="next">Next</div>
-      <div class="prev">Prev</div>
+      <div @click="nextPrev(true)" class="next">Next</div>
+      <div @click="nextPrev(false)"class="prev">Prev</div>
     </div>
 
 

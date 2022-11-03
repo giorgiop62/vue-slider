@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
   data(){
     return {
+      //array di immagini
       images: [
         "http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg",
         "https://static1.evcdn.net/images/reduction/1513757_w-1920_h-1080_q-70_m-crop.jpg",
@@ -12,8 +13,23 @@ createApp({
       ],
       activeImage:0
     }
-  }
+  },
 
+  methods: {
+    //funzione per andare scorrere le foto avanti e indietro
+    nextPrev(isNext){
+      if(isNext) this.activeImage++;
+      else this.activeImage--;
+      //controllo per continuare un loop di foto
+      if(this.activeImage === this.images.length){
+        this.activeImage = 0;
+      }else if(this.activeImage < 0){
+        this.activeImage = this.images.length -1;
+      }
+      }
+    }
+ 
+  
 
 
 
