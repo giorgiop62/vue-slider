@@ -42,6 +42,9 @@ createApp({
 
 
 
+    },
+    mounted() {
+      this.autoscroll();
     }
  
   
